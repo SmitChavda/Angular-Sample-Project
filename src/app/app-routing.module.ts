@@ -8,7 +8,8 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
-    children: [{ path: '', component: AppComponent, pathMatch: 'full' }],
+    loadChildren: () =>
+      import('./features/features.module').then((m) => m.FeaturesModule),
   },
 ];
 
